@@ -11,8 +11,8 @@ from transformers import CLIPVisionModel, AutoProcessor
 ##############################
 # 1. 하이퍼파라미터 & 경로 설정
 ##############################
-BATCH_SIZE = 32
-EPOCHS = 5
+BATCH_SIZE = 512
+EPOCHS = 10
 LR = 1e-3
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
