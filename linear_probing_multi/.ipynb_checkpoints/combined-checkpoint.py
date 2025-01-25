@@ -24,7 +24,7 @@ LR = 1e-3
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # 예시: ImageNet100 구조
-base_dir = '/notebooks/s2_multiencoder/imagenet100'
+base_dir = '/path/to/imagenet100'
 val_dir = os.path.join(base_dir, 'val.X')
 train_dirs = [os.path.join(base_dir, f'train.X{i}') for i in range(1, 5)]
 labels_path = os.path.join(base_dir, 'Labels.json')
