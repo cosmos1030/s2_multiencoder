@@ -3,12 +3,7 @@ import torch.nn as nn
 from transformers import CLIPVisionModel, Dinov2Model
 from s2wrapper import forward as multiscale_forward
 
-class DualEncoderLinearProbeS2(nn.Module):
-    """
-    1) CLIP + S2 multiscale
-    2) DINO + S2 multiscale
-    CLS 임베딩들 concat -> Linear
-    """
+class DualEncoderLinearProbe(nn.Module):
     def __init__(
         self,
         clip_model_name="openai/clip-vit-base-patch32",
@@ -54,22 +49,25 @@ class DualEncoderLinearProbeS2(nn.Module):
 
     def forward(self, clip_x, dino_x):
         with torch.no_grad():
-            # (1) CLIP + S2
+            # (1) CLIP + S2 (위치 인자)
             clip_out = multiscale_forward(
-                forward_fn=self.forward_clip,
-                x=clip_x,
+                self.forward_clip,  # model
+                clip_x,             # input
                 scales=self.clip_scales,
-                num_prefix_token=self.clip_num_prefix
-            )  # [B, seq_len, clip_dim * len(scales)]
+                num_prefix_token=self.clip_num_prefix,
+                output_shape="bnc"  
+            )
+            # clip_out: [B, seq_len, clip_dim * len(scales)]
             clip_cls = clip_out[:, 0, :]
 
             # (2) DINO + S2
             dino_out = multiscale_forward(
-                forward_fn=self.forward_dino,
-                x=dino_x,
+                self.forward_dino,
+                dino_x,
                 scales=self.dino_scales,
-                num_prefix_token=self.dino_num_prefix
-            )  # [B, seq_len, dino_dim * len(scales)]
+                num_prefix_token=self.dino_num_prefix,
+                output_shape="bnc"
+            )
             dino_cls = dino_out[:, 0, :]
 
         # (3) Concat -> Linear

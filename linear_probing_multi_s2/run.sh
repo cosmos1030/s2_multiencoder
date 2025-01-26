@@ -17,16 +17,16 @@ if [ "$MODE" = "train" ]; then
       --labels_path "/notebooks/s2_multiencoder/imagenet100/Labels.json" \
       --clip_model_name "openai/clip-vit-base-patch32" \
       --dino_model_name "facebook/dinov2-base" \
-      --checkpoint_dir "./checkpoints" \
-      --resume_checkpoint "" \
+      --checkpoint_dir "/datasets/test/s2_multiencoder/checkpoints/linear_probing_multi_s2/checkpoints" \
+      --resume_checkpoint "./checkpoints/best_epoch_1.pth" \
       --project_name "my_earlystop_project"
 
 elif [ "$MODE" = "test" ]; then
   # 체크포인트만 불러와서 테스트
   python main.py \
       --mode test \
-      --checkpoint_path "./checkpoints/best_epoch_5.pth" \
-      --batch_size 64 \
+      --checkpoint_path "./checkpoints/best_epoch_1.pth" \
+      --batch_size 256 \
       --test_dir "/notebooks/s2_multiencoder/imagenet100/val.X" \
       --labels_path "/notebooks/s2_multiencoder/imagenet100/Labels.json" \
       --clip_model_name "openai/clip-vit-base-patch32" \

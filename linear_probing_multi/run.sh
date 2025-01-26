@@ -25,7 +25,7 @@ elif [ "$MODE" = "test" ]; then
   # 체크포인트만 불러와서 테스트
   python main.py \
       --mode test \
-      --checkpoint_path "./checkpoints/best_epoch_5.pth" \
+      --checkpoint_path "./checkpoints/best_epoch_2.pth" \
       --batch_size 64 \
       --test_dir "/notebooks/s2_multiencoder/imagenet100/val.X" \
       --labels_path "/notebooks/s2_multiencoder/imagenet100/Labels.json" \
