@@ -1,0 +1,65 @@
+[INFO] Resume from checkpoint: ./checkpoints/cifar100/both_s2/best_epoch_2.pth
+Epoch [3/10]
+Traceback (most recent call last):
+  File "/notebooks/s2_multiencoder/combined/main.py", line 208, in <module>
+    main()
+  File "/notebooks/s2_multiencoder/combined/main.py", line 146, in main
+    best_ckpt = train_dual_encoder_probe(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined/train.py", line 68, in train_dual_encoder_probe
+    for clip_imgs, dino_imgs, labels in train_pbar:
+  File "/usr/local/lib/python3.11/dist-packages/tqdm/std.py", line 1182, in __iter__
+    for obj in iterable:
+  File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 630, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 674, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/notebooks/s2_multiencoder/combined/dataset.py", line 160, in __getitem__
+    dino_enc = self.dino_processor(images=img, return_tensors="pt")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/image_processing_utils.py", line 549, in __call__
+    return self.preprocess(images, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/models/bit/image_processing_bit.py", line 283, in preprocess
+    images = [to_numpy_array(image) for image in images]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/models/bit/image_processing_bit.py", line 283, in <listcomp>
+    images = [to_numpy_array(image) for image in images]
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/image_utils.py", line 155, in to_numpy_array
+    if is_vision_available() and isinstance(img, PIL.Image.Image):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/utils/import_utils.py", line 697, in is_vision_available
+    package_version = importlib.metadata.version("Pillow")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/metadata/__init__.py", line 1008, in version
+    return distribution(distribution_name).version
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/metadata/__init__.py", line 632, in version
+    return self.metadata['Version']
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/metadata/__init__.py", line 617, in metadata
+    return _adapters.Message(email.message_from_string(text))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/email/__init__.py", line 37, in message_from_string
+    return Parser(*args, **kws).parsestr(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/email/parser.py", line 67, in parsestr
+    return self.parse(StringIO(text), headersonly=headersonly)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/email/parser.py", line 56, in parse
+    feedparser.feed(data)
+  File "/usr/lib/python3.11/email/feedparser.py", line 173, in feed
+    self._input.push(data)
+  File "/usr/lib/python3.11/email/feedparser.py", line 109, in push
+    parts = self._partial.readlines()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

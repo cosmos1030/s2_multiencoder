@@ -1,0 +1,28 @@
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Current SDK version is 0.15.10
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Configure stats pid to 189
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Loading settings from /notebooks/s2_multiencoder/combined/wandb/settings
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'combined/main.py', 'program': '/notebooks/s2_multiencoder/combined/main.py'}
+2025-01-30 18:33:56,864 INFO    MainThread:189 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2025-01-30 18:33:56,865 INFO    MainThread:189 [wandb_init.py:_log_setup():524] Logging user logs to /notebooks/s2_multiencoder/combined/wandb/run-20250130_183356-ywdn56wu/logs/debug.log
+2025-01-30 18:33:56,865 INFO    MainThread:189 [wandb_init.py:_log_setup():525] Logging internal logs to /notebooks/s2_multiencoder/combined/wandb/run-20250130_183356-ywdn56wu/logs/debug-internal.log
+2025-01-30 18:33:56,865 INFO    MainThread:189 [wandb_init.py:init():564] calling init triggers
+2025-01-30 18:33:56,865 INFO    MainThread:189 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {}
+2025-01-30 18:33:56,865 INFO    MainThread:189 [wandb_init.py:init():614] starting backend
+2025-01-30 18:33:56,865 INFO    MainThread:189 [wandb_init.py:init():618] setting up manager
+2025-01-30 18:33:56,866 INFO    MainThread:189 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-01-30 18:33:56,868 INFO    MainThread:189 [wandb_init.py:init():624] backend started and connected
+2025-01-30 18:33:56,871 INFO    MainThread:189 [wandb_init.py:init():715] updated telemetry
+2025-01-30 18:33:56,961 INFO    MainThread:189 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2025-01-30 18:33:57,271 INFO    MainThread:189 [wandb_run.py:_on_init():2220] communicating current version
+2025-01-30 18:33:57,500 INFO    MainThread:189 [wandb_run.py:_on_init():2229] got version response upgrade_message: "wandb version 0.19.5 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-01-30 18:33:57,500 INFO    MainThread:189 [wandb_init.py:init():799] starting run threads in backend
+2025-01-30 18:33:57,572 INFO    MainThread:189 [wandb_run.py:_console_start():2199] atexit reg
+2025-01-30 18:33:57,572 INFO    MainThread:189 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2025-01-30 18:33:57,572 INFO    MainThread:189 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2025-01-30 18:33:57,572 INFO    MainThread:189 [wandb_run.py:_redirect():2144] Redirects installed.
+2025-01-30 18:33:57,576 INFO    MainThread:189 [wandb_init.py:init():840] run started, returning control to user process

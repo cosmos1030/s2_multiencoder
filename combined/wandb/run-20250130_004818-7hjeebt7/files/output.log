@@ -1,0 +1,21 @@
+
+Epoch [1/10]
+
+
+
+
+
+
+
+
+Traceback (most recent call last):
+  File "/notebooks/s2_multiencoder/combined/main.py", line 144, in <module>
+    # ----------------------
+    ^^^^^^
+  File "/notebooks/s2_multiencoder/combined/main.py", line 103, in main
+    val_dataset = CIFARDualDataset(split="test",
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined/train.py", line 82, in train_dual_encoder_probe
+    train_loss_sum += loss.item() * labels.size(0)
+                      ^^^^^^^^^^^
+KeyboardInterrupt

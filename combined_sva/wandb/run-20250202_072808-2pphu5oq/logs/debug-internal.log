@@ -1,0 +1,194 @@
+2025-02-02 07:28:08,491 INFO    StreamThr :753 [internal.py:wandb_internal():86] W&B internal server running at pid: 753, started at: 2025-02-02 07:28:08.491029
+2025-02-02 07:28:08,493 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: status
+2025-02-02 07:28:08,494 INFO    WriterThread:753 [datastore.py:open_for_write():85] open: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/run-2pphu5oq.wandb
+2025-02-02 07:28:08,499 DEBUG   SenderThread:753 [sender.py:send():379] send: header
+2025-02-02 07:28:08,499 DEBUG   SenderThread:753 [sender.py:send():379] send: run
+2025-02-02 07:28:08,788 INFO    SenderThread:753 [dir_watcher.py:__init__():211] watching files in: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files
+2025-02-02 07:28:08,788 INFO    SenderThread:753 [sender.py:_start_run_threads():1121] run started: 2pphu5oq with start time 1738481288.490961
+2025-02-02 07:28:08,790 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: check_version
+2025-02-02 07:28:08,790 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: check_version
+2025-02-02 07:28:08,959 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: run_start
+2025-02-02 07:28:08,970 DEBUG   HandlerThread:753 [system_info.py:__init__():32] System info init
+2025-02-02 07:28:08,970 DEBUG   HandlerThread:753 [system_info.py:__init__():47] System info init done
+2025-02-02 07:28:08,970 INFO    HandlerThread:753 [system_monitor.py:start():181] Starting system monitor
+2025-02-02 07:28:08,970 INFO    SystemMonitor:753 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2025-02-02 07:28:08,971 INFO    HandlerThread:753 [system_monitor.py:probe():201] Collecting system info
+2025-02-02 07:28:08,972 INFO    SystemMonitor:753 [interfaces.py:start():190] Started cpu monitoring
+2025-02-02 07:28:08,973 INFO    SystemMonitor:753 [interfaces.py:start():190] Started disk monitoring
+2025-02-02 07:28:08,974 INFO    SystemMonitor:753 [interfaces.py:start():190] Started gpu monitoring
+2025-02-02 07:28:08,974 INFO    SystemMonitor:753 [interfaces.py:start():190] Started memory monitoring
+2025-02-02 07:28:08,976 INFO    SystemMonitor:753 [interfaces.py:start():190] Started network monitoring
+2025-02-02 07:28:08,985 DEBUG   HandlerThread:753 [system_info.py:probe():196] Probing system
+2025-02-02 07:28:08,988 DEBUG   HandlerThread:753 [system_info.py:_probe_git():181] Probing git
+2025-02-02 07:28:08,995 DEBUG   HandlerThread:753 [system_info.py:_probe_git():189] Probing git done
+2025-02-02 07:28:08,995 DEBUG   HandlerThread:753 [system_info.py:probe():244] Probing system done
+2025-02-02 07:28:08,995 DEBUG   HandlerThread:753 [system_monitor.py:probe():210] {'os': 'Linux-5.19.0-45-generic-x86_64-with-glibc2.35', 'python': '3.11.7', 'heartbeatAt': '2025-02-02T07:28:08.985802', 'startedAt': '2025-02-02T07:28:08.478487', 'docker': None, 'cuda': None, 'args': ('--mode', 'train', '--dataset_name', 'cifar100', '--batch_size', '128', '--epochs', '10', '--lr', '1e-3', '--clip_model_name', 'openai/clip-vit-base-patch16', '--dino_model_name', 'facebook/dinov2-small', '--clip_scales', '1.0', '--dino_scales', '1.0', '--clip_num_prefix', '1', '--dino_num_prefix', '1', '--checkpoint_dir', './checkpoints/cifar100/both_sva', '--resume_checkpoint', '', '--project_name', 'test_cifar100_project'), 'state': 'running', 'program': '/notebooks/s2_multiencoder/combined_sva/main.py', 'codePathLocal': 'main.py', 'codePath': 'combined_sva/main.py', 'git': {'remote': 'https://github.com/cosmos1030/s2_multiencoder.git', 'commit': 'c8598b3048b8e788d0c99dfed301cd61c47a62e4'}, 'email': None, 'root': '/notebooks/s2_multiencoder', 'host': 'n8pylyg5i1', 'username': 'root', 'executable': '/usr/local/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2600.06, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2600.06, 'min': 0.0, 'max': 0.0}, {'current': 2600.06, 'min': 0.0, 'max': 0.0}, {'current': 2600.06, 'min': 0.0, 'max': 0.0}, {'current': 2600.06, 'min': 0.0, 'max': 0.0}, {'current': 2600.06, 'min': 0.0, 'max': 0.0}, {'current': 2600.06, 'min': 0.0, 'max': 0.0}, {'current': 2600.06, 'min': 0.0, 'max': 0.0}, {'current': 2600.06, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 244.23077011108398, 'used': 79.65430450439453}}, 'gpu': 'Quadro P5000', 'gpu_count': 1, 'gpu_devices': [{'name': 'Quadro P5000', 'memory_total': 17179869184}], 'memory': {'total': 29.3634033203125}}
+2025-02-02 07:28:08,995 INFO    HandlerThread:753 [system_monitor.py:probe():211] Finished collecting system info
+2025-02-02 07:28:08,995 INFO    HandlerThread:753 [system_monitor.py:probe():214] Publishing system info
+2025-02-02 07:28:08,995 DEBUG   HandlerThread:753 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2025-02-02 07:28:08,996 DEBUG   HandlerThread:753 [system_info.py:_save_pip():68] Saving pip packages done
+2025-02-02 07:28:08,996 INFO    HandlerThread:753 [system_monitor.py:probe():216] Finished publishing system info
+2025-02-02 07:28:09,001 DEBUG   SenderThread:753 [sender.py:send():379] send: files
+2025-02-02 07:28:09,001 INFO    SenderThread:753 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2025-02-02 07:28:09,006 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: stop_status
+2025-02-02 07:28:09,006 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: stop_status
+2025-02-02 07:28:09,022 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: internal_messages
+2025-02-02 07:28:09,161 DEBUG   SenderThread:753 [sender.py:send():379] send: telemetry
+2025-02-02 07:28:09,358 INFO    wandb-upload_0:753 [upload_job.py:push():131] Uploaded file /tmp/tmptgotlrxkwandb/uxdw8jto-wandb-metadata.json
+2025-02-02 07:28:09,790 INFO    Thread-12 :753 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/wandb-metadata.json
+2025-02-02 07:28:09,791 INFO    Thread-12 :753 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/requirements.txt
+2025-02-02 07:28:14,162 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: status_report
+2025-02-02 07:28:14,792 INFO    Thread-12 :753 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/output.log
+2025-02-02 07:28:16,794 INFO    Thread-12 :753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/output.log
+2025-02-02 07:28:19,074 DEBUG   SenderThread:753 [sender.py:send():379] send: exit
+2025-02-02 07:28:19,074 INFO    SenderThread:753 [sender.py:send_exit():584] handling exit code: 1
+2025-02-02 07:28:19,075 INFO    SenderThread:753 [sender.py:send_exit():586] handling runtime: 10
+2025-02-02 07:28:19,076 INFO    SenderThread:753 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2025-02-02 07:28:19,077 INFO    SenderThread:753 [sender.py:send_exit():592] send defer
+2025-02-02 07:28:19,077 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,077 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 0
+2025-02-02 07:28:19,077 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,077 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 0
+2025-02-02 07:28:19,077 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 1
+2025-02-02 07:28:19,077 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,077 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 1
+2025-02-02 07:28:19,078 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,078 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 1
+2025-02-02 07:28:19,078 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 2
+2025-02-02 07:28:19,078 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,078 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 2
+2025-02-02 07:28:19,078 INFO    HandlerThread:753 [system_monitor.py:finish():190] Stopping system monitor
+2025-02-02 07:28:19,078 DEBUG   SystemMonitor:753 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2025-02-02 07:28:19,079 DEBUG   SystemMonitor:753 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2025-02-02 07:28:19,079 DEBUG   SystemMonitor:753 [system_monitor.py:_start():170] Publishing last batch of metrics
+2025-02-02 07:28:19,079 INFO    HandlerThread:753 [interfaces.py:finish():202] Joined cpu monitor
+2025-02-02 07:28:19,079 INFO    HandlerThread:753 [interfaces.py:finish():202] Joined disk monitor
+2025-02-02 07:28:19,085 INFO    HandlerThread:753 [interfaces.py:finish():202] Joined gpu monitor
+2025-02-02 07:28:19,085 INFO    HandlerThread:753 [interfaces.py:finish():202] Joined memory monitor
+2025-02-02 07:28:19,085 INFO    HandlerThread:753 [interfaces.py:finish():202] Joined network monitor
+2025-02-02 07:28:19,086 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,086 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 2
+2025-02-02 07:28:19,086 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 3
+2025-02-02 07:28:19,086 DEBUG   SenderThread:753 [sender.py:send():379] send: stats
+2025-02-02 07:28:19,086 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,086 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 3
+2025-02-02 07:28:19,087 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,087 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 3
+2025-02-02 07:28:19,087 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 4
+2025-02-02 07:28:19,087 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,087 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 4
+2025-02-02 07:28:19,087 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,087 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 4
+2025-02-02 07:28:19,087 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 5
+2025-02-02 07:28:19,087 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,087 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 5
+2025-02-02 07:28:19,088 DEBUG   SenderThread:753 [sender.py:send():379] send: summary
+2025-02-02 07:28:19,094 INFO    SenderThread:753 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2025-02-02 07:28:19,094 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,094 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 5
+2025-02-02 07:28:19,094 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 6
+2025-02-02 07:28:19,094 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,094 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 6
+2025-02-02 07:28:19,094 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,094 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 6
+2025-02-02 07:28:19,097 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: status_report
+2025-02-02 07:28:19,171 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 7
+2025-02-02 07:28:19,171 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:19,171 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 7
+2025-02-02 07:28:19,172 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:19,172 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 7
+2025-02-02 07:28:19,796 INFO    Thread-12 :753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/config.yaml
+2025-02-02 07:28:19,796 INFO    Thread-12 :753 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/wandb-summary.json
+2025-02-02 07:28:20,075 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:20,372 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 8
+2025-02-02 07:28:20,372 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:20,372 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:20,373 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 8
+2025-02-02 07:28:20,373 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:20,373 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 8
+2025-02-02 07:28:20,373 INFO    SenderThread:753 [job_builder.py:build():281] Attempting to build job artifact
+2025-02-02 07:28:20,373 INFO    SenderThread:753 [job_builder.py:_get_source_type():393] is repo sourced job
+2025-02-02 07:28:20,375 INFO    SenderThread:753 [job_builder.py:build():369] adding wandb-job metadata file
+2025-02-02 07:28:20,378 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 9
+2025-02-02 07:28:20,378 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:20,379 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 9
+2025-02-02 07:28:20,379 DEBUG   SenderThread:753 [sender.py:send():379] send: artifact
+2025-02-02 07:28:20,632 INFO    SenderThread:753 [sender.py:send_artifact():1453] sent artifact job-https___github.com_cosmos1030_s2_multiencoder.git_combined_sva_main.py - {'id': 'QXJ0aWZhY3Q6MTQ4NDczNjM2MA==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU1Njc3MTc1Ng==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTQ4NDczNjM2MA==', 'versionIndex': 0}}}
+2025-02-02 07:28:20,632 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:20,632 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 9
+2025-02-02 07:28:20,632 INFO    SenderThread:753 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-02-02 07:28:20,796 INFO    Thread-12 :753 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/output.log
+2025-02-02 07:28:20,797 INFO    SenderThread:753 [dir_watcher.py:finish():388] scan: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files
+2025-02-02 07:28:20,797 INFO    SenderThread:753 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/requirements.txt requirements.txt
+2025-02-02 07:28:20,797 INFO    SenderThread:753 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/wandb-metadata.json wandb-metadata.json
+2025-02-02 07:28:20,797 INFO    SenderThread:753 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/wandb-summary.json wandb-summary.json
+2025-02-02 07:28:20,799 INFO    SenderThread:753 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/output.log output.log
+2025-02-02 07:28:20,800 INFO    SenderThread:753 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/config.yaml config.yaml
+2025-02-02 07:28:20,802 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 10
+2025-02-02 07:28:20,802 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:20,805 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 10
+2025-02-02 07:28:20,807 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:20,808 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 10
+2025-02-02 07:28:20,808 INFO    SenderThread:753 [file_pusher.py:finish():175] shutting down file pusher
+2025-02-02 07:28:20,990 INFO    wandb-upload_1:753 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/wandb-summary.json
+2025-02-02 07:28:21,075 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:21,076 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:21,150 INFO    wandb-upload_2:753 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/output.log
+2025-02-02 07:28:21,168 INFO    wandb-upload_0:753 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/requirements.txt
+2025-02-02 07:28:22,076 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:22,077 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:23,077 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:23,078 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:24,078 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:24,079 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:25,079 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:25,080 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:25,081 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: status_report
+2025-02-02 07:28:26,081 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:26,082 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:26,089 INFO    wandb-upload_3:753 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/files/config.yaml
+2025-02-02 07:28:26,289 INFO    Thread-11 (_thread_body):753 [sender.py:transition_state():612] send defer: 11
+2025-02-02 07:28:26,290 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:26,290 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 11
+2025-02-02 07:28:26,290 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:26,290 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 11
+2025-02-02 07:28:26,291 INFO    SenderThread:753 [file_pusher.py:join():181] waiting for file pusher
+2025-02-02 07:28:26,291 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 12
+2025-02-02 07:28:26,291 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:26,291 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 12
+2025-02-02 07:28:26,291 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:26,291 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 12
+2025-02-02 07:28:26,291 INFO    SenderThread:753 [file_stream.py:finish():594] file stream finish called
+2025-02-02 07:28:26,360 INFO    SenderThread:753 [file_stream.py:finish():598] file stream finish is done
+2025-02-02 07:28:26,360 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 13
+2025-02-02 07:28:26,361 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:26,361 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 13
+2025-02-02 07:28:26,361 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:26,361 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 13
+2025-02-02 07:28:26,361 INFO    SenderThread:753 [sender.py:transition_state():612] send defer: 14
+2025-02-02 07:28:26,361 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: defer
+2025-02-02 07:28:26,361 INFO    HandlerThread:753 [handler.py:handle_request_defer():170] handle defer: 14
+2025-02-02 07:28:26,362 DEBUG   SenderThread:753 [sender.py:send():379] send: final
+2025-02-02 07:28:26,362 DEBUG   SenderThread:753 [sender.py:send():379] send: footer
+2025-02-02 07:28:26,362 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: defer
+2025-02-02 07:28:26,362 INFO    SenderThread:753 [sender.py:send_request_defer():608] handle sender defer: 14
+2025-02-02 07:28:26,362 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:26,363 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:26,363 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: poll_exit
+2025-02-02 07:28:26,364 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: poll_exit
+2025-02-02 07:28:26,364 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: server_info
+2025-02-02 07:28:26,364 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: server_info
+2025-02-02 07:28:26,366 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: get_summary
+2025-02-02 07:28:26,366 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: sampled_history
+2025-02-02 07:28:26,367 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: internal_messages
+2025-02-02 07:28:26,367 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: job_info
+2025-02-02 07:28:26,416 DEBUG   SenderThread:753 [sender.py:send_request():406] send_request: job_info
+2025-02-02 07:28:26,417 INFO    MainThread:753 [wandb_run.py:_footer_history_summary_info():3557] rendering history
+2025-02-02 07:28:26,417 INFO    MainThread:753 [wandb_run.py:_footer_history_summary_info():3589] rendering summary
+2025-02-02 07:28:26,417 INFO    MainThread:753 [wandb_run.py:_footer_sync_info():3516] logging synced files
+2025-02-02 07:28:26,417 DEBUG   HandlerThread:753 [handler.py:handle_request():144] handle_request: shutdown
+2025-02-02 07:28:26,418 INFO    HandlerThread:753 [handler.py:finish():840] shutting down handler
+2025-02-02 07:28:27,368 INFO    WriterThread:753 [datastore.py:close():294] close: /notebooks/s2_multiencoder/combined_sva/wandb/run-20250202_072808-2pphu5oq/run-2pphu5oq.wandb
+2025-02-02 07:28:27,417 INFO    SenderThread:753 [sender.py:finish():1531] shutting down sender
+2025-02-02 07:28:27,417 INFO    SenderThread:753 [file_pusher.py:finish():175] shutting down file pusher
+2025-02-02 07:28:27,417 INFO    SenderThread:753 [file_pusher.py:join():181] waiting for file pusher

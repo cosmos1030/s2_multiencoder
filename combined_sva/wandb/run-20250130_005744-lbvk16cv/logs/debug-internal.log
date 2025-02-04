@@ -1,0 +1,509 @@
+2025-01-30 00:57:44,068 INFO    StreamThr :480 [internal.py:wandb_internal():86] W&B internal server running at pid: 480, started at: 2025-01-30 00:57:44.067971
+2025-01-30 00:57:44,070 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status
+2025-01-30 00:57:44,073 INFO    WriterThread:480 [datastore.py:open_for_write():85] open: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/run-lbvk16cv.wandb
+2025-01-30 00:57:44,074 DEBUG   SenderThread:480 [sender.py:send():379] send: header
+2025-01-30 00:57:44,076 DEBUG   SenderThread:480 [sender.py:send():379] send: run
+2025-01-30 00:57:44,399 INFO    SenderThread:480 [dir_watcher.py:__init__():211] watching files in: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files
+2025-01-30 00:57:44,399 INFO    SenderThread:480 [sender.py:_start_run_threads():1121] run started: lbvk16cv with start time 1738198664.069092
+2025-01-30 00:57:44,401 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: check_version
+2025-01-30 00:57:44,402 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: check_version
+2025-01-30 00:57:44,564 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: run_start
+2025-01-30 00:57:44,574 DEBUG   HandlerThread:480 [system_info.py:__init__():32] System info init
+2025-01-30 00:57:44,575 DEBUG   HandlerThread:480 [system_info.py:__init__():47] System info init done
+2025-01-30 00:57:44,575 INFO    HandlerThread:480 [system_monitor.py:start():181] Starting system monitor
+2025-01-30 00:57:44,575 INFO    SystemMonitor:480 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2025-01-30 00:57:44,576 INFO    HandlerThread:480 [system_monitor.py:probe():201] Collecting system info
+2025-01-30 00:57:44,576 INFO    SystemMonitor:480 [interfaces.py:start():190] Started cpu monitoring
+2025-01-30 00:57:44,578 INFO    SystemMonitor:480 [interfaces.py:start():190] Started disk monitoring
+2025-01-30 00:57:44,580 INFO    SystemMonitor:480 [interfaces.py:start():190] Started gpu monitoring
+2025-01-30 00:57:44,581 INFO    SystemMonitor:480 [interfaces.py:start():190] Started memory monitoring
+2025-01-30 00:57:44,582 INFO    SystemMonitor:480 [interfaces.py:start():190] Started network monitoring
+2025-01-30 00:57:44,591 DEBUG   HandlerThread:480 [system_info.py:probe():196] Probing system
+2025-01-30 00:57:44,593 DEBUG   HandlerThread:480 [system_info.py:_probe_git():181] Probing git
+2025-01-30 00:57:44,599 DEBUG   HandlerThread:480 [system_info.py:_probe_git():189] Probing git done
+2025-01-30 00:57:44,599 DEBUG   HandlerThread:480 [system_info.py:probe():244] Probing system done
+2025-01-30 00:57:44,599 DEBUG   HandlerThread:480 [system_monitor.py:probe():210] {'os': 'Linux-5.19.0-45-generic-x86_64-with-glibc2.35', 'python': '3.11.7', 'heartbeatAt': '2025-01-30T00:57:44.591146', 'startedAt': '2025-01-30T00:57:44.049955', 'docker': None, 'cuda': None, 'args': ('--mode', 'train', '--dataset_name', 'cifar10', '--batch_size', '256', '--epochs', '10', '--lr', '1e-3', '--clip_model_name', 'openai/clip-vit-base-patch32', '--dino_model_name', 'facebook/dinov2-base', '--clip_scales', '1.0', '--dino_scales', '1.0', '--clip_num_prefix', '1', '--dino_num_prefix', '1', '--checkpoint_dir', './checkpoints/cifar10/b', '--resume_checkpoint', '', '--project_name', 'test_cifar10_project'), 'state': 'running', 'program': '/notebooks/s2_multiencoder/combined/main.py', 'codePathLocal': 'main.py', 'codePath': 'combined/main.py', 'git': {'remote': 'https://github.com/cosmos1030/s2_multiencoder.git', 'commit': 'c8598b3048b8e788d0c99dfed301cd61c47a62e4'}, 'email': None, 'root': '/notebooks/s2_multiencoder', 'host': 'nh24jc0z5e', 'username': 'root', 'executable': '/usr/local/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2599.815, 'min': 0.0, 'max': 0.0}, 'cpu_freq_per_core': [{'current': 2599.815, 'min': 0.0, 'max': 0.0}, {'current': 2599.815, 'min': 0.0, 'max': 0.0}, {'current': 2599.815, 'min': 0.0, 'max': 0.0}, {'current': 2599.815, 'min': 0.0, 'max': 0.0}, {'current': 2599.815, 'min': 0.0, 'max': 0.0}, {'current': 2599.815, 'min': 0.0, 'max': 0.0}, {'current': 2599.815, 'min': 0.0, 'max': 0.0}, {'current': 2599.815, 'min': 0.0, 'max': 0.0}], 'disk': {'/': {'total': 244.23077011108398, 'used': 121.18824005126953}}, 'gpu': 'Quadro P5000', 'gpu_count': 1, 'gpu_devices': [{'name': 'Quadro P5000', 'memory_total': 17179869184}], 'memory': {'total': 29.3634033203125}}
+2025-01-30 00:57:44,600 INFO    HandlerThread:480 [system_monitor.py:probe():211] Finished collecting system info
+2025-01-30 00:57:44,600 INFO    HandlerThread:480 [system_monitor.py:probe():214] Publishing system info
+2025-01-30 00:57:44,600 DEBUG   HandlerThread:480 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2025-01-30 00:57:44,601 DEBUG   HandlerThread:480 [system_info.py:_save_pip():68] Saving pip packages done
+2025-01-30 00:57:44,601 INFO    HandlerThread:480 [system_monitor.py:probe():216] Finished publishing system info
+2025-01-30 00:57:44,608 DEBUG   SenderThread:480 [sender.py:send():379] send: files
+2025-01-30 00:57:44,608 INFO    SenderThread:480 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2025-01-30 00:57:44,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:57:44,614 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:57:44,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: internal_messages
+2025-01-30 00:57:44,876 DEBUG   SenderThread:480 [sender.py:send():379] send: telemetry
+2025-01-30 00:57:44,958 INFO    wandb-upload_0:480 [upload_job.py:push():131] Uploaded file /tmp/tmp7vufqjqawandb/64moq6l6-wandb-metadata.json
+2025-01-30 00:57:45,401 INFO    Thread-12 :480 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/requirements.txt
+2025-01-30 00:57:45,401 INFO    Thread-12 :480 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/wandb-metadata.json
+2025-01-30 00:57:49,877 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:57:51,403 INFO    Thread-12 :480 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:57:53,404 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:57:55,645 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:57:59,613 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:57:59,614 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:58:00,737 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:03,410 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:58:06,346 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:11,343 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:14,613 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:58:14,614 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:58:14,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 00:58:15,415 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:58:16,709 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:17,416 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/config.yaml
+2025-01-30 00:58:22,625 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:23,422 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:58:27,626 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:29,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 00:58:29,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:58:29,615 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:58:32,680 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:35,427 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:58:37,684 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:42,682 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:44,582 DEBUG   SystemMonitor:480 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2025-01-30 00:58:44,583 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 00:58:44,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:58:44,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 00:58:44,615 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:58:45,432 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:58:47,741 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:52,745 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:57,436 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:58:58,442 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:58:59,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 00:58:59,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:58:59,615 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:59:03,685 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:07,440 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:59:08,873 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:13,874 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:14,584 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 00:59:14,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:59:14,615 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:59:18,984 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:19,445 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:59:23,985 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:27,448 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:59:29,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:59:29,615 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:59:29,767 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:34,768 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:39,452 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:59:40,270 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:44,585 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 00:59:44,614 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:59:44,614 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 00:59:44,616 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 00:59:45,747 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:49,456 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:59:51,611 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:56,612 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 00:59:59,460 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 00:59:59,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 00:59:59,617 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 00:59:59,617 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:00:01,777 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:07,287 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:07,464 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:00:12,289 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:14,585 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:00:14,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:00:14,615 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:00:17,472 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:00:18,101 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:23,105 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:28,696 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:29,487 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:00:29,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:00:29,616 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:00:34,678 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:40,144 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:41,498 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:00:44,586 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:00:44,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:00:44,616 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:00:45,736 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:51,033 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:51,501 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:00:56,034 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:00:59,615 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:00:59,616 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:01:01,143 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:01,505 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:01:06,144 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:11,509 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:01:11,739 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:14,587 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:01:14,616 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:01:14,616 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:01:17,692 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:21,513 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:01:23,394 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:28,908 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:29,516 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:01:29,617 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:01:29,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:01:29,618 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:01:34,697 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:37,519 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:01:40,566 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:44,587 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:01:44,617 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:01:44,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:01:44,619 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:01:45,522 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:01:45,715 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:50,716 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:55,528 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:01:55,785 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:01:59,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:01:59,618 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:02:01,677 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:05,533 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:02:07,255 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:12,256 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:14,588 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:02:14,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:02:14,618 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:02:17,537 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:02:17,763 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:22,764 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:27,545 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:02:27,830 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:29,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:02:29,619 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:02:29,619 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:02:33,740 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:39,549 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:02:39,597 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:44,589 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:02:44,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:02:44,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:02:44,619 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:44,619 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:02:47,552 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:02:50,249 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:55,555 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:02:56,116 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:02:59,618 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:02:59,622 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:02:59,623 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:03:01,790 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:05,559 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:03:07,735 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:13,495 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:13,562 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:03:14,589 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:03:14,619 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:03:14,619 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:03:14,620 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:03:18,767 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:24,584 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:25,567 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:03:29,585 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:29,619 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:03:29,619 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:03:29,621 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:03:34,968 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:35,571 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:03:39,969 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:44,590 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:03:44,619 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:03:44,619 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:03:44,621 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:03:45,577 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:03:45,755 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:50,755 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:53,580 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:03:56,129 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:03:59,619 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:03:59,619 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:04:01,730 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:05,587 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:04:06,864 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:11,865 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:14,591 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:04:14,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:04:14,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:04:14,620 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:04:15,594 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:04:17,786 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:22,785 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:25,599 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:04:28,636 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:29,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:04:29,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:04:29,620 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:04:33,773 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:35,603 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:04:39,153 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:44,592 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:04:44,592 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:44,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:04:44,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:04:44,621 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:04:45,606 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:04:49,705 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:53,609 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:04:55,344 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:04:59,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:04:59,621 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:04:59,621 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:05:01,189 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:01,613 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:05:06,190 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:11,320 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:11,616 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:05:14,593 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:05:14,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:05:14,621 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:05:14,621 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:05:16,701 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:21,845 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:23,621 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:05:26,846 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:29,620 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:05:29,621 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:05:29,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:05:32,268 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:33,625 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:05:37,269 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:42,888 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:43,629 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:05:44,593 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:05:44,621 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:05:44,621 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:05:44,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:05:48,742 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:53,633 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:05:54,503 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:59,506 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:05:59,621 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:05:59,621 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:05:59,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:06:03,636 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:06:05,002 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:10,003 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:13,640 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:06:14,594 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:06:14,621 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:06:14,622 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:06:14,622 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:06:15,738 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:20,739 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:23,644 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:06:25,846 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:29,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:06:29,623 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:06:31,632 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:33,647 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:06:36,634 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:41,651 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:06:42,296 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:44,595 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:06:44,622 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:06:44,624 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:06:44,624 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:06:47,776 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:53,210 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:53,656 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:06:58,211 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:06:59,622 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:06:59,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:06:59,623 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:07:03,660 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:07:03,684 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:08,685 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:11,663 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:07:14,415 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:14,595 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:07:14,622 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:07:14,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:07:14,623 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:07:19,784 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:21,668 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:07:25,115 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:29,622 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:07:29,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:07:29,623 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:07:30,609 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:33,673 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:07:35,610 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:41,192 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:41,676 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:07:44,596 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:07:44,622 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:07:44,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:07:44,623 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:07:46,782 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:49,679 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:07:52,736 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:58,505 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:07:59,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:07:59,626 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:07:59,626 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:07:59,683 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:08:03,710 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:07,686 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:08:09,111 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:14,112 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:14,604 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:08:14,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:08:14,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:08:14,624 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:08:17,690 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:08:19,976 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:25,573 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:25,693 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:08:29,623 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: keepalive
+2025-01-30 01:08:29,624 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: stop_status
+2025-01-30 01:08:29,624 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: stop_status
+2025-01-30 01:08:30,789 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:33,696 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:08:36,242 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:40,997 DEBUG   SenderThread:480 [sender.py:send():379] send: exit
+2025-01-30 01:08:40,997 INFO    SenderThread:480 [sender.py:send_exit():584] handling exit code: 255
+2025-01-30 01:08:40,997 INFO    SenderThread:480 [sender.py:send_exit():586] handling runtime: 656
+2025-01-30 01:08:40,998 INFO    SenderThread:480 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2025-01-30 01:08:40,998 INFO    SenderThread:480 [sender.py:send_exit():592] send defer
+2025-01-30 01:08:40,998 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:40,998 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 0
+2025-01-30 01:08:40,998 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:40,998 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 0
+2025-01-30 01:08:40,999 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 1
+2025-01-30 01:08:40,999 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:40,999 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 1
+2025-01-30 01:08:40,999 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:40,999 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 1
+2025-01-30 01:08:40,999 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 2
+2025-01-30 01:08:40,999 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:40,999 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 2
+2025-01-30 01:08:40,999 INFO    HandlerThread:480 [system_monitor.py:finish():190] Stopping system monitor
+2025-01-30 01:08:41,000 DEBUG   SystemMonitor:480 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2025-01-30 01:08:41,000 DEBUG   SystemMonitor:480 [system_monitor.py:_start():170] Publishing last batch of metrics
+2025-01-30 01:08:41,001 INFO    HandlerThread:480 [interfaces.py:finish():202] Joined cpu monitor
+2025-01-30 01:08:41,001 INFO    HandlerThread:480 [interfaces.py:finish():202] Joined disk monitor
+2025-01-30 01:08:41,007 INFO    HandlerThread:480 [interfaces.py:finish():202] Joined gpu monitor
+2025-01-30 01:08:41,007 INFO    HandlerThread:480 [interfaces.py:finish():202] Joined memory monitor
+2025-01-30 01:08:41,007 INFO    HandlerThread:480 [interfaces.py:finish():202] Joined network monitor
+2025-01-30 01:08:41,008 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:41,008 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 2
+2025-01-30 01:08:41,008 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 3
+2025-01-30 01:08:41,008 DEBUG   SenderThread:480 [sender.py:send():379] send: stats
+2025-01-30 01:08:41,008 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:41,009 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 3
+2025-01-30 01:08:41,009 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:41,009 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 3
+2025-01-30 01:08:41,009 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 4
+2025-01-30 01:08:41,009 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:41,009 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 4
+2025-01-30 01:08:41,009 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:41,009 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 4
+2025-01-30 01:08:41,010 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 5
+2025-01-30 01:08:41,010 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:41,010 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 5
+2025-01-30 01:08:41,010 DEBUG   SenderThread:480 [sender.py:send():379] send: summary
+2025-01-30 01:08:41,025 INFO    SenderThread:480 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2025-01-30 01:08:41,025 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:41,025 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 5
+2025-01-30 01:08:41,025 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 6
+2025-01-30 01:08:41,025 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:41,025 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 6
+2025-01-30 01:08:41,026 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:41,026 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 6
+2025-01-30 01:08:41,026 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 7
+2025-01-30 01:08:41,026 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: status_report
+2025-01-30 01:08:41,026 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:41,026 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 7
+2025-01-30 01:08:41,026 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:41,026 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 7
+2025-01-30 01:08:41,700 INFO    Thread-12 :480 [dir_watcher.py:_on_file_created():271] file/dir created: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/wandb-summary.json
+2025-01-30 01:08:41,997 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: poll_exit
+2025-01-30 01:08:42,966 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 8
+2025-01-30 01:08:42,966 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: poll_exit
+2025-01-30 01:08:42,966 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:42,967 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 8
+2025-01-30 01:08:42,967 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:42,967 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 8
+2025-01-30 01:08:42,967 INFO    SenderThread:480 [job_builder.py:build():281] Attempting to build job artifact
+2025-01-30 01:08:42,968 INFO    SenderThread:480 [job_builder.py:_get_source_type():393] is repo sourced job
+2025-01-30 01:08:42,969 INFO    SenderThread:480 [job_builder.py:build():369] adding wandb-job metadata file
+2025-01-30 01:08:42,972 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 9
+2025-01-30 01:08:42,973 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:42,973 DEBUG   SenderThread:480 [sender.py:send():379] send: artifact
+2025-01-30 01:08:42,973 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 9
+2025-01-30 01:08:42,997 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: poll_exit
+2025-01-30 01:08:43,263 INFO    SenderThread:480 [sender.py:send_artifact():1453] sent artifact job-https___github.com_cosmos1030_s2_multiencoder.git_combined_main.py - {'id': 'QXJ0aWZhY3Q6MTQ3NTY4MDYxMA==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU1MjMyMTk3MQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTQ3NTY4MDYxMA==', 'versionIndex': 0}}}
+2025-01-30 01:08:43,263 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:43,264 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 9
+2025-01-30 01:08:43,264 INFO    SenderThread:480 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-01-30 01:08:43,701 INFO    Thread-12 :480 [dir_watcher.py:_on_file_modified():288] file/dir modified: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:08:43,702 INFO    SenderThread:480 [dir_watcher.py:finish():388] scan: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files
+2025-01-30 01:08:43,702 INFO    SenderThread:480 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/requirements.txt requirements.txt
+2025-01-30 01:08:43,703 INFO    SenderThread:480 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/wandb-metadata.json wandb-metadata.json
+2025-01-30 01:08:43,703 INFO    SenderThread:480 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/wandb-summary.json wandb-summary.json
+2025-01-30 01:08:43,703 INFO    SenderThread:480 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log output.log
+2025-01-30 01:08:43,705 INFO    SenderThread:480 [dir_watcher.py:finish():402] scan save: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/config.yaml config.yaml
+2025-01-30 01:08:43,708 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 10
+2025-01-30 01:08:43,711 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: poll_exit
+2025-01-30 01:08:43,712 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:43,712 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 10
+2025-01-30 01:08:43,713 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:43,713 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 10
+2025-01-30 01:08:43,713 INFO    SenderThread:480 [file_pusher.py:finish():175] shutting down file pusher
+2025-01-30 01:08:43,999 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: poll_exit
+2025-01-30 01:08:43,999 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: poll_exit
+2025-01-30 01:08:44,885 INFO    wandb-upload_0:480 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/requirements.txt
+2025-01-30 01:08:45,000 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: poll_exit
+2025-01-30 01:08:45,001 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: poll_exit
+2025-01-30 01:08:45,511 INFO    wandb-upload_1:480 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/wandb-summary.json
+2025-01-30 01:08:45,522 INFO    wandb-upload_3:480 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/config.yaml
+2025-01-30 01:08:45,538 INFO    wandb-upload_2:480 [upload_job.py:push():131] Uploaded file /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/files/output.log
+2025-01-30 01:08:45,739 INFO    Thread-11 (_thread_body):480 [sender.py:transition_state():612] send defer: 11
+2025-01-30 01:08:45,739 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:45,740 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 11
+2025-01-30 01:08:45,740 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:45,740 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 11
+2025-01-30 01:08:45,740 INFO    SenderThread:480 [file_pusher.py:join():181] waiting for file pusher
+2025-01-30 01:08:45,740 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 12
+2025-01-30 01:08:45,740 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:45,741 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 12
+2025-01-30 01:08:45,741 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:45,741 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 12
+2025-01-30 01:08:45,741 INFO    SenderThread:480 [file_stream.py:finish():594] file stream finish called
+2025-01-30 01:08:45,799 INFO    SenderThread:480 [file_stream.py:finish():598] file stream finish is done
+2025-01-30 01:08:45,799 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 13
+2025-01-30 01:08:45,800 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:45,800 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 13
+2025-01-30 01:08:45,800 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:45,800 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 13
+2025-01-30 01:08:45,800 INFO    SenderThread:480 [sender.py:transition_state():612] send defer: 14
+2025-01-30 01:08:45,801 DEBUG   SenderThread:480 [sender.py:send():379] send: final
+2025-01-30 01:08:45,801 DEBUG   SenderThread:480 [sender.py:send():379] send: footer
+2025-01-30 01:08:45,801 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: defer
+2025-01-30 01:08:45,801 INFO    HandlerThread:480 [handler.py:handle_request_defer():170] handle defer: 14
+2025-01-30 01:08:45,801 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: defer
+2025-01-30 01:08:45,801 INFO    SenderThread:480 [sender.py:send_request_defer():608] handle sender defer: 14
+2025-01-30 01:08:45,803 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: poll_exit
+2025-01-30 01:08:45,803 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: poll_exit
+2025-01-30 01:08:45,803 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: server_info
+2025-01-30 01:08:45,803 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: get_summary
+2025-01-30 01:08:45,803 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: sampled_history
+2025-01-30 01:08:45,803 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: internal_messages
+2025-01-30 01:08:45,804 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: poll_exit
+2025-01-30 01:08:45,804 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: poll_exit
+2025-01-30 01:08:45,804 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: server_info
+2025-01-30 01:08:45,806 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: job_info
+2025-01-30 01:08:45,853 DEBUG   SenderThread:480 [sender.py:send_request():406] send_request: job_info
+2025-01-30 01:08:45,854 INFO    MainThread:480 [wandb_run.py:_footer_history_summary_info():3557] rendering history
+2025-01-30 01:08:45,854 INFO    MainThread:480 [wandb_run.py:_footer_history_summary_info():3589] rendering summary
+2025-01-30 01:08:45,854 INFO    MainThread:480 [wandb_run.py:_footer_sync_info():3516] logging synced files
+2025-01-30 01:08:45,854 DEBUG   HandlerThread:480 [handler.py:handle_request():144] handle_request: shutdown
+2025-01-30 01:08:45,855 INFO    HandlerThread:480 [handler.py:finish():840] shutting down handler
+2025-01-30 01:08:46,807 INFO    WriterThread:480 [datastore.py:close():294] close: /notebooks/s2_multiencoder/combined/wandb/run-20250130_005744-lbvk16cv/run-lbvk16cv.wandb
+2025-01-30 01:08:46,854 INFO    SenderThread:480 [sender.py:finish():1531] shutting down sender
+2025-01-30 01:08:46,854 INFO    SenderThread:480 [file_pusher.py:finish():175] shutting down file pusher
+2025-01-30 01:08:46,854 INFO    SenderThread:480 [file_pusher.py:join():181] waiting for file pusher

@@ -1,0 +1,37 @@
+
+Epoch [1/10]
+Training:   0%|                                                                                                                   | 0/391 [00:00<?, ?it/s]
+CLIP feature shape before reshape: torch.Size([128, 256, 1024])
+Traceback (most recent call last):
+  File "/notebooks/s2_multiencoder/combined_sva/main.py", line 207, in <module>
+    main()
+  File "/notebooks/s2_multiencoder/combined_sva/main.py", line 145, in main
+    best_ckpt = train_dual_encoder_probe(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined_sva/train.py", line 81, in train_dual_encoder_probe
+    outputs = model(clip_imgs, dino_imgs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined_sva/sva_model.py", line 215, in forward
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined_sva/sva_model.py", line 63, in forward
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (32768x1024 and 768x768)

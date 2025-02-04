@@ -12,23 +12,23 @@ if [ "$MODE" = "train" ]; then
       --batch_size 256 \
       --epochs 10 \
       --lr 1e-3 \
-      --train_dirs /notebooks/s2_multiencoder/imagenet100/train.X1 /notebooks/s2_multiencoder/imagenet100/train.X2 /notebooks/s2_multiencoder/imagenet100/train.X3 /notebooks/s2_multiencoder/imagenet100/train.X4 \
-      --test_dir "/notebooks/s2_multiencoder/imagenet100/val.X" \
-      --labels_path "/notebooks/s2_multiencoder/imagenet100/Labels.json" \
+      --train_dirs /datasets/external/imagenet100/train.X1 /datasets/external/imagenet100/train.X2 /datasets/external/imagenet100/train.X3 /datasets/external/imagenet100/train.X4 \
+      --test_dir "/datasets/external/imagenet100/imagenet100/val.X" \
+      --labels_path "/datasets/external/imagenet100/Labels.json" \
       --clip_model_name "openai/clip-vit-base-patch32" \
       --dino_model_name "facebook/dinov2-base" \
-      --checkpoint_dir "/datasets/test/s2_multiencoder/checkpoints/linear_probing_multi_s2/checkpoints" \
-      --resume_checkpoint "./checkpoints/best_epoch_1.pth" \
+      --checkpoint_dir "/datasets/external/s2_multiencoder/checkpoints/linear_probing_multi_s2/checkpoints" \
+      --resume_checkpoint "/datasets/external/s2_multiencoder/checkpoints/linear_probing_multi_s2/checkpoints/best_epoch_1.pth" \
       --project_name "my_earlystop_project"
 
 elif [ "$MODE" = "test" ]; then
   # 체크포인트만 불러와서 테스트
   python main.py \
       --mode test \
-      --checkpoint_path "./checkpoints/best_epoch_1.pth" \
+      --checkpoint_path "/datasets/external/s2_multiencoder/checkpoints/linear_probing_multi_s2/checkpoints/best_epoch_1.pth" \
       --batch_size 256 \
-      --test_dir "/notebooks/s2_multiencoder/imagenet100/val.X" \
-      --labels_path "/notebooks/s2_multiencoder/imagenet100/Labels.json" \
+      --test_dir "/datasets/external/imagenet100/val.X" \
+      --labels_path "/datasets/external/imagenet100/Labels.json" \
       --clip_model_name "openai/clip-vit-base-patch32" \
       --dino_model_name "facebook/dinov2-base"
 else

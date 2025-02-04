@@ -1,0 +1,23 @@
+
+Epoch [1/10]
+
+
+
+
+
+
+
+
+
+
+
+Traceback (most recent call last):
+  File "/notebooks/s2_multiencoder/combined_sva/main.py", line 207, in <module>
+    main()
+  File "/notebooks/s2_multiencoder/combined_sva/main.py", line 145, in main
+    best_ckpt = train_dual_encoder_probe(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined_sva/train.py", line 86, in train_dual_encoder_probe
+    train_loss_sum += loss.item() * labels.size(0)
+                      ^^^^^^^^^^^
+KeyboardInterrupt

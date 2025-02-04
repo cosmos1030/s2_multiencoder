@@ -1,0 +1,21 @@
+
+Epoch [1/10]
+Traceback (most recent call last):
+  File "/notebooks/s2_multiencoder/combined_sva/main.py", line 207, in <module>
+    main()
+  File "/notebooks/s2_multiencoder/combined_sva/main.py", line 145, in main
+    best_ckpt = train_dual_encoder_probe(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined_sva/train.py", line 81, in train_dual_encoder_probe
+    outputs = model(clip_imgs, dino_imgs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/notebooks/s2_multiencoder/combined_sva/sva_model.py", line 194, in forward
+    dino_feat = dino_feat.permute(0, 2, 1).reshape(B, dim, 16, 7)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: shape '[128, 768, 16, 7]' is invalid for input of size 25165824
