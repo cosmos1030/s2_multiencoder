@@ -1,3 +1,4 @@
 imagenet100/
 secret.txt
 checkpoints/
+cifar_data/
