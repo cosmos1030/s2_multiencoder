@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: CIFAR100 Training",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/dyk6208/Projects/s2_multiencoder/combined_nvila/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--mode", "train",
+                "--dataset_name", "cifar100",
+                "--batch_size", "16",
+                "--epochs", "10",
+                "--lr", "1e-3",
+                "--clip_model_name", "openai/clip-vit-base-patch32",
+                "--dino_model_name", "facebook/dinov2-base",
+                "--default_scale", "224",
+                "--scales", "1", "2",
+                "--attention_heads", "6",
+                "--checkpoint_dir", "./checkpoints/cifar100/both_s2_nvila",
+                "--resume_checkpoint", "",
+                "--project_name", "multi_nvila"
+            ]
+        }
+    ]
+}
