@@ -9,7 +9,7 @@ from dataset import (
     dual_collate_fn,
     load_labels
 )
-from model import DualEncoderLinearProbe
+from model import Model
 from train import train_dual_encoder_probe
 from test import test_evaluation
 
@@ -38,11 +38,15 @@ def main():
     parser.add_argument("--dino_scales", type=float, nargs='+', default=[1.0])
     parser.add_argument("--clip_num_prefix", type=int, default=1)
     parser.add_argument("--dino_num_prefix", type=int, default=1)
-
+    
+    # Transformer encoder
+    parser.add_argument("--num_heads", type=int, default=6)
+    parser.add_argument("--num_layers", type=int, default=2)
+                        
     parser.add_argument("--checkpoint_dir", type=str, default="./checkpoints")
     parser.add_argument("--resume_checkpoint", type=str, default="")
     parser.add_argument("--checkpoint_path", type=str, default="")
-    parser.add_argument("--project_name", type=str, default="my_wandb_project")
+    parser.add_argument("--project_name", type=str, default="multis2_transformer")
 
     args = parser.parse_args()
 
@@ -68,7 +72,7 @@ def main():
         id_to_class = None  # CIFAR-100 클래스는 내부 dataset에서만 사용
 
     # 모델 생성
-    model = DualEncoderLinearProbe(
+    model = Model(
         clip_model_name=args.clip_model_name,
         clip_scales=args.clip_scales,
         clip_num_prefix=args.clip_num_prefix,
@@ -77,7 +81,10 @@ def main():
         dino_scales=args.dino_scales,
         dino_num_prefix=args.dino_num_prefix,
 
-        num_classes=num_classes
+        num_classes=num_classes,
+        embed_dim = 768,
+        num_heads = args.num_heads,
+        num_layers = args.num_layers
     )
 
     if args.mode == "train":

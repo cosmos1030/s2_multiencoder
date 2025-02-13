@@ -1,0 +1,119 @@
+{
+    "os": "Linux-5.19.0-45-generic-x86_64-with-glibc2.35",
+    "python": "3.11.7",
+    "heartbeatAt": "2025-02-09T05:18:05.562797",
+    "startedAt": "2025-02-09T05:18:04.909129",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--mode",
+        "train",
+        "--dataset_name",
+        "cifar100",
+        "--batch_size",
+        "128",
+        "--epochs",
+        "10",
+        "--lr",
+        "1e-3",
+        "--clip_model_name",
+        "openai/clip-vit-base-patch32",
+        "--dino_model_name",
+        "facebook/dinov2-base",
+        "--clip_scales",
+        "1.0",
+        "2.0",
+        "--dino_scales",
+        "1.0",
+        "2.0",
+        "--clip_num_prefix",
+        "1",
+        "--dino_num_prefix",
+        "1",
+        "--checkpoint_dir",
+        "./checkpoints/cifar100/both_s2_transformer",
+        "--resume_checkpoint",
+        "./checkpoints/cifar100/both_s2_transformer/best_epoch_2.pth",
+        "--project_name",
+        "s2multiencoder_transformer"
+    ],
+    "state": "running",
+    "program": "/notebooks/s2_multiencoder/combined/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "combined/main.py",
+    "git": {
+        "remote": "https://github.com/cosmos1030/s2_multiencoder.git",
+        "commit": "069fc4a4397a8820bb34dff680d9ef8db7cdde07"
+    },
+    "email": null,
+    "root": "/notebooks/s2_multiencoder",
+    "host": "nxtso8613y",
+    "username": "root",
+    "executable": "/usr/local/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2600.006,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2600.006,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 244.23077011108398,
+            "used": 100.89075088500977
+        }
+    },
+    "gpu": "Quadro P5000",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "Quadro P5000",
+            "memory_total": 17179869184
+        }
+    ],
+    "memory": {
+        "total": 29.3634033203125
+    }
+}

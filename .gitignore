@@ -3,3 +3,7 @@ secret.txt
 checkpoints/
 cifar_data/
 private.md
+<<<<<<< Updated upstream
+=======
+wandb/
+>>>>>>> Stashed changes
