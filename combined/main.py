@@ -43,6 +43,12 @@ def main():
     # Transformer encoder
     parser.add_argument("--num_heads", type=int, default=6)
     parser.add_argument("--num_layers", type=int, default=2)
+    
+    # Lora setting
+    parser.add_argument("--use_lora", type=bool)
+    parser.add_argument("--lora_r", type=int)
+    parser.add_argument("--lora_alpha", type=int)
+    parser.add_argument("--lora_dropout", type=float)
                         
     parser.add_argument("--checkpoint_dir", type=str, default="./checkpoints")
     parser.add_argument("--resume_checkpoint", type=str, default="")
@@ -86,9 +92,11 @@ def main():
         dino_num_prefix=args.dino_num_prefix,
 
         num_classes=num_classes,
-        # embed_dim = 768,
-        # num_heads = args.num_heads,
-        # num_layers = args.num_layers
+        
+        use_lora= args.use_lora,
+        lora_r = args.lora_r,
+        lora_alpha = args.lora_alpha,
+        lora_dropout= args.lora_dropout
     )
 
     if args.mode == "train":
