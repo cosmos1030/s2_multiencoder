@@ -161,3 +161,48 @@ class CIFAR100DualDataset(Dataset):
             dino_pixels = dino_enc["pixel_values"].squeeze(0)
 
         return clip_pixels, dino_pixels, label
+
+
+# ----------------------------
+# CIFAR-10 전용 Dataset
+# ----------------------------
+class CIFAR10DualDataset(Dataset):
+    """
+    torchvision.datasets.CIFAR100 로드 + (CLIP/DINO) 전처리
+    """
+    def __init__(self, split="train", clip_processor=None, dino_processor=None, download=True):
+        super().__init__()
+        # train=True/False 에 따라 split 결정
+        is_train = (split == "train")
+
+        # torchvision CIFAR10
+        self.dataset = datasets.CIFAR10(
+            root="./cifar_data", 
+            train=is_train, 
+            download=download
+        )
+
+        self.clip_processor = clip_processor
+        self.dino_processor = dino_processor
+
+        # CIFAR-100 classes: 100개
+        # ['apple','aquarium_fish','baby','bear','beaver', ... 'worm']
+        self.id_to_class = {str(i): c for i, c in enumerate(self.dataset.classes)}
+
+    def __len__(self):
+        return len(self.dataset)
+
+    def __getitem__(self, idx):
+        img, label = self.dataset[idx]  # (PIL Image, int)
+        
+        clip_pixels = None
+        if self.clip_processor is not None:
+            clip_enc = self.clip_processor(images=img, return_tensors="pt")
+            clip_pixels = clip_enc["pixel_values"].squeeze(0)
+
+        dino_pixels = None
+        if self.dino_processor is not None:
+            dino_enc = self.dino_processor(images=img, return_tensors="pt")
+            dino_pixels = dino_enc["pixel_values"].squeeze(0)
+
+        return clip_pixels, dino_pixels, label

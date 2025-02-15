@@ -83,6 +83,9 @@ def train_dual_encoder_probe(
             preds = outputs.argmax(dim=1)
             train_correct += (preds == labels).sum().item()
             train_total += labels.size(0)
+            
+            train_pbar.set_postfix(loss=train_loss_sum / (train_total + 1e-6))  # Avoid division by zero
+
 
         train_loss_epoch = train_loss_sum / len(train_loader.dataset)
         train_acc_epoch  = train_correct / train_total

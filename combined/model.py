@@ -15,9 +15,9 @@ class Model(nn.Module):
         dino_num_prefix=1,
 
         num_classes=100,
-        embed_dim=1536,  # Combined dimension of CLIP + DINO
-        num_heads=6,
-        num_layers=2
+        # embed_dim=1536,  # Combined dimension of CLIP + DINO
+        # num_heads=6,
+        # num_layers=2
     ):
         super().__init__()
 
@@ -53,15 +53,16 @@ class Model(nn.Module):
             self.dino_num_prefix = 0
             dino_hidden_dim = 0
 
-        # ---------------------------------
-        # Transformer Encoder
-        # ---------------------------------
-        self.input_dim = embed_dim*2
-        encoder_layer = nn.TransformerEncoderLayer(d_model=self.input_dim, nhead=num_heads, batch_first=True)
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+        # # ---------------------------------
+        # # Transformer Encoder
+        # # ---------------------------------
+        # self.input_dim = embed_dim*2
+        # encoder_layer = nn.TransformerEncoderLayer(d_model=self.input_dim, nhead=num_heads, batch_first=True)
+        # self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
 
-        # Final Classification Layer
-        self.linear = nn.Linear(self.input_dim, num_classes)
+        # 최종 임베딩 차원
+        out_dim = (clip_hidden_dim * len(clip_scales)) + (dino_hidden_dim * len(dino_scales))
+        self.linear = nn.Linear(out_dim, num_classes)
 
     def forward_clip(self, x):
         return self.clip_model(x).last_hidden_state  # [B, seq_len, dim]
@@ -81,6 +82,7 @@ class Model(nn.Module):
                     num_prefix_token=self.clip_num_prefix,
                     output_shape="bnc"
                 )  # [B, seq_len, clip_dim * len(scales)]
+                clip_cls = clip_out[:, 0, :]
                 feats.append(clip_out)
                 #print("shape after S2 clip: ", clip_out.shape)
 
@@ -93,22 +95,28 @@ class Model(nn.Module):
                     num_prefix_token=self.dino_num_prefix,
                     output_shape="bnc"
                 )  # [B, seq_len, dino_dim * len(scales)]
+                dino_cls = dino_out[:, 0, :]
                 feats.append(dino_out)
                 #print("shape after S2 dino: ", dino_out.shape)
 
-        if not feats:
-            raise ValueError("No model input provided (both clip_x and dino_x are None).")
-
-        # (3) Concatenate Token Sequences
-        concat_feat = torch.cat(feats, dim=1)  # [B, seq_len, input_dim]
-        #print("shape after concat: ", concat_feat.shape)
-
-        # (4) Transformer Encoding
-        transformed_feat = self.transformer_encoder(concat_feat)  # [B, seq_len, input_dim]
-
-        # (5) Use Mean Pooling Over All Tokens
-        pooled_feat = transformed_feat.mean(dim=1)  # [B, input_dim]
-
-        # (6) Final Classification
-        logits = self.linear(pooled_feat)  # [B, num_classes]
+        # if not feats:
+        #     raise ValueError("No model input provided (both clip_x and dino_x are None).")
+        
+        # (3) Concat -> Linear
+        concat_feat = torch.cat([clip_cls, dino_cls], dim=1)
+        logits = self.linear(concat_feat)
         return logits
+
+        # # (3) Concatenate Token Sequences
+        # concat_feat = torch.cat(feats, dim=1)  # [B, seq_len, input_dim]
+        # #print("shape after concat: ", concat_feat.shape)
+
+        # # (4) Transformer Encoding
+        # transformed_feat = self.transformer_encoder(concat_feat)  # [B, seq_len, input_dim]
+
+        # # (5) Use Mean Pooling Over All Tokens
+        # pooled_feat = transformed_feat.mean(dim=1)  # [B, input_dim]
+
+        # # (6) Final Classification
+        # logits = self.linear(pooled_feat)  # [B, num_classes]
+        # return logits

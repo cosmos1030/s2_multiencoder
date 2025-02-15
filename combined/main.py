@@ -6,6 +6,7 @@ from dataset import (
     MultiFolderDualDataset,
     ImageFolderDualDataset,
     CIFAR100DualDataset,
+    CIFAR10DualDataset,
     dual_collate_fn,
     load_labels
 )
@@ -16,9 +17,9 @@ from test import test_evaluation
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", type=str, required=True, help="train or test")
-    parser.add_argument("--dataset_name", type=str, default="imagenet100",
-                        choices=["imagenet100", "cifar100"],
-                        help="Which dataset to use: imagenet100 or cifar100")
+    parser.add_argument("--dataset_name", type=str, default="cifar10",
+                        choices=["imagenet100", "cifar100", 'cifar10'],
+                        help="Which dataset to use: imagenet100 or cifar100 or cifar10")
 
     parser.add_argument("--batch_size", type=int, default=256)
     parser.add_argument("--epochs", type=int, default=10)
@@ -65,11 +66,14 @@ def main():
         # ImageNet-100
         id_to_class = load_labels(args.labels_path)
         num_classes = len(id_to_class)
-    else:
+    elif args.dataset_name == "cifar100":
         # CIFAR-100
         # 100 classes
         num_classes = 100
         id_to_class = None  # CIFAR-100 클래스는 내부 dataset에서만 사용
+    else:
+        num_classes = 10
+        id_to_class = None
 
     # 모델 생성
     model = Model(
@@ -82,9 +86,9 @@ def main():
         dino_num_prefix=args.dino_num_prefix,
 
         num_classes=num_classes,
-        embed_dim = 768,
-        num_heads = args.num_heads,
-        num_layers = args.num_layers
+        # embed_dim = 768,
+        # num_heads = args.num_heads,
+        # num_layers = args.num_layers
     )
 
     if args.mode == "train":
@@ -121,7 +125,7 @@ def main():
         # -----------------------------
         # (2) CIFAR-100
         # -----------------------------
-        else:  # cifar100
+        elif args.dataset_name == "cifar100":
             train_dataset = CIFAR100DualDataset(
                 split="train",
                 clip_processor=clip_processor,
@@ -148,6 +152,37 @@ def main():
                 shuffle=False,
                 collate_fn=dual_collate_fn
             )
+            
+            # -----------------------------
+        # (2) CIFAR-100
+        # -----------------------------
+        else:
+            train_dataset = CIFAR10DualDataset(
+                split="train",
+                clip_processor=clip_processor,
+                dino_processor=dino_processor,
+                download=True
+            )
+            train_loader = torch.utils.data.DataLoader(
+                train_dataset,
+                batch_size=args.batch_size,
+                shuffle=True,
+                collate_fn=dual_collate_fn
+            )
+
+            # validation -> 간단히 test split 사용
+            val_dataset = CIFAR10DualDataset(
+                split="test",
+                clip_processor=clip_processor,
+                dino_processor=dino_processor,
+                download=True
+            )
+            val_loader = torch.utils.data.DataLoader(
+                val_dataset,
+                batch_size=args.batch_size,
+                shuffle=False,
+                collate_fn=dual_collate_fn
+            )
 
         # 학습
         best_ckpt = train_dual_encoder_probe(
@@ -162,6 +197,8 @@ def main():
             resume_checkpoint=args.resume_checkpoint
         )
         print("Best checkpoint saved at:", best_ckpt)
+        
+        
 
     elif args.mode == "test":
         # -----------------------------
