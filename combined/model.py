@@ -24,6 +24,8 @@ class Model(nn.Module):
         super().__init__()
 
         self.use_lora = use_lora  # Store LoRA usage flag
+        if use_lora:
+            print("using lora")
 
         # ---------------------------------
         # CLIP with Optional LoRA
@@ -32,14 +34,26 @@ class Model(nn.Module):
             self.clip_model = CLIPVisionModel.from_pretrained(clip_model_name)
 
             if self.use_lora:
-                lora_config = LoraConfig(
+                target_modules = [
+                    f"vision_model.encoder.layers.{i}.self_attn.q_proj" for i in range(12)
+                ] + [
+                    f"vision_model.encoder.layers.{i}.self_attn.k_proj" for i in range(12)
+                ] + [
+                    f"vision_model.encoder.layers.{i}.self_attn.v_proj" for i in range(12)
+                ] + [
+                    f"vision_model.encoder.layers.{i}.self_attn.out_proj" for i in range(12)
+                ]
+
+                lora_config_clip = LoraConfig(
                     r=lora_r,
                     lora_alpha=lora_alpha,
-                    target_modules=["query", "key", "value"],  
+                    target_modules=target_modules,
                     lora_dropout=lora_dropout,
                     bias="none"
                 )
-                self.clip_model = get_peft_model(self.clip_model, lora_config)
+                
+                self.clip_model = get_peft_model(self.clip_model, lora_config_clip)
+
 
             self.clip_scales = clip_scales
             self.clip_num_prefix = clip_num_prefix
@@ -57,14 +71,24 @@ class Model(nn.Module):
             self.dino_model = Dinov2Model.from_pretrained(dino_model_name)
 
             if self.use_lora:
-                lora_config = LoraConfig(
+                dino_target_modules = [
+                    f"encoder.layer.{i}.attention.attention.query" for i in range(12)
+                ] + [
+                    f"encoder.layer.{i}.attention.attention.key" for i in range(12)
+                ] + [
+                    f"encoder.layer.{i}.attention.attention.value" for i in range(12)
+                ] + [
+                    f"encoder.layer.{i}.attention.output.dense" for i in range(12)
+                ]
+
+                lora_config_dino = LoraConfig(
                     r=lora_r,
                     lora_alpha=lora_alpha,
-                    target_modules=["query", "key", "value"],  
+                    target_modules=dino_target_modules,
                     lora_dropout=lora_dropout,
                     bias="none"
                 )
-                self.dino_model = get_peft_model(self.dino_model, lora_config)
+                self.dino_model = get_peft_model(self.dino_model, lora_config_dino)
 
             self.dino_scales = dino_scales
             self.dino_num_prefix = dino_num_prefix
